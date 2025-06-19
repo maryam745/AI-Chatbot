@@ -90,8 +90,4 @@ _Current date: Thursday, June 19, 2025, 9:50 AM PKT_
 
 
 
-**How to use:**  
-- Copy this content into a file named `README.md` in your project folder.
-- Replace `your-username` in the git clone URL with your actual GitHub username.
-- Add any extra instructions or credits as needed.
 
