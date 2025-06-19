@@ -62,7 +62,7 @@ You can ask:
 
 1. **Download or Clone the Project:**
    ```
-   
+   https://github.com/maryam745/AI-Chatbot
    ```
 2. **Open `index.html` in Any Modern Browser**  
    (e.g., Chrome, Edge)
