@@ -85,7 +85,6 @@ You can ask:
 ## 👩‍💻 Created By
 
 **Maryam Nazar**  
-Final Year Student – DIT  
 Project: AI Chatbot (Frontend Only)  
 _Current date: Thursday, June 19, 2025, 9:50 AM PKT_
 
