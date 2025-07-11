@@ -80,13 +80,7 @@ You can ask:
 - Add theme switch (dark/light)
 - Support multiple languages
 
----
 
-## 👩‍💻 Created By
-
-**Maryam Nazar**  
-Project: AI Chatbot (Frontend Only)  
-_Current date: Thursday, June 19, 2025, 9:50 AM PKT_
 
 
 
