@@ -125,100 +125,80 @@ function toggleTheme() {
 userInput.addEventListener("keypress", function (e) {
   if (e.key === "Enter") sendMessage();
 });
-
 function getBotResponse(input) {
   const now = new Date();
+  
+  const jokes = [
+    "Why did the computer go to the doctor? It had a virus!",
+    "Why don’t robots panic? Because they have nerves of steel!",
+    "Why did the scarecrow win an award? He was outstanding in his field!",
+    "Why did the chicken join a band? It had the drumsticks!"
+  ];
+
+  const funFacts = [
+    "2025 is a perfect square year because 2025 = 45².",
+    "A hummingbird can fly backwards and beat its wings up to 80 times per second!",
+    "Sloths can hold their breath for 40 minutes underwater!",
+    "Octopuses have three hearts.",
+    "Clouds can weigh over 1 million pounds!",
+    "Lightning strikes in Canada every 3 seconds in summer.",
+    "Dolphins can sleep while swimming!",
+    "By 2025, flying taxis might be real in major cities!",
+    "Mars will come close to Earth in 2025 — only 56 million km!",
+    "Digital restaurants with robot chefs are emerging fast."
+  ];
+
   input = input.toLowerCase();
 
-  // Greetings and Personal
-  if (input.includes("hello") || input.includes("hi")) return "Hello! 👋 How can I assist you today?";
-  if (input.includes("your name")) return "I'm <b>Falcon</b>, your smart AI assistant.";
-  if (input.includes("how are you")) return "I'm functioning perfectly, thanks!";
-  if (input.includes("your age")) return "I was created in 2025, still learning every day!";
+  if (input.includes("hello") || input.includes("hi")) return "Hello! How can I assist you today?";
+  if (input.includes("your name")) return "I’m <b>Falcon</b>, your AI chatbot!";
+  if (input.includes("time")) return "Current time is: <b>" + now.toLocaleTimeString() + "</b>";
+  if (input.includes("date")) return "Today's date is: <b>" + now.toLocaleDateString() + "</b>";
   if (input.includes("bye")) return "Goodbye! Take care.";
-  if (input.includes("thank")) return "You're welcome! 😊";
+  if (input.includes("how are you")) return "I'm a bot, but I'm functioning perfectly!";
+  if (input.includes("your age")) return "I was created in 2025 — so I'm still young!";
+  if (input.includes("joke")) return jokes[Math.floor(Math.random() * jokes.length)];
+  if (input.includes("help") || input.includes("can you do")) return "I can chat, tell jokes, share fun facts, give time/date, and listen to voice!";
+  if (input.includes("fact")) return funFacts[Math.floor(Math.random() * funFacts.length)];
+  if (input.includes("weather")) return "I can't check live weather yet, but I hope it's nice where you are!";
+  if (input.includes("quote")) return "“The best way to predict the future is to invent it.” – Alan Kay";
+  if (input.includes("thank")) return "You're welcome!";
+  if (input.includes("book")) return "I love tech books — especially about AI.";
+  if (input.includes("movie")) return "I like sci-fi like *The Matrix* or *Interstellar*!";
+  if (input.includes("music")) return "Electronic beats and chill synths are my favorite!";
+  if (input.includes("api")) return "API means Application Programming Interface – a way for programs to talk.";
+  if (input.includes("html")) return "HTML stands for HyperText Markup Language – it structures web pages.";
+  if (input.includes("css")) return "CSS means Cascading Style Sheets – it styles the HTML.";
+  if (input.includes("chatgpt")) return "ChatGPT is an advanced AI model developed by OpenAI.";
+  if (input.includes("pakistan")) return "Pakistan is a beautiful country in South Asia with rich culture.";
+  if (input.includes("programming")) return "Programming is writing instructions for computers. Popular languages: Python, Java, C++.";
+  if (input.includes("ai")) return "AI means Artificial Intelligence — machines that simulate human intelligence.";
+  if (input.includes("robot")) return "Robots are smart machines that can perform tasks automatically.";
+  if (input.includes("language")) return "I speak English (for now).";
+  if (input.includes("science")) return "Science is the pursuit of knowledge through observation and experiments.";
+  if (input.includes("math")) return "Math is the study of numbers, shapes, and logic.";
+  if (input.includes("color")) return "I like blue — it's calm and techy!";
+  if (input.includes("computer")) return "A computer is an electronic device that processes data.";
+  if (input.includes("game")) return "Try playing chess — it's great for your brain!";
+  if (input.includes("virus")) return "A virus is a small infectious agent that replicates inside living cells.";
+  if (input.includes("space")) return "Space is the vast universe beyond Earth’s atmosphere.";
+  if (input.includes("sleep")) return "Sleep helps your body and mind recharge!";
+  if (input.includes("eat")) return "Bots don’t eat, but I hear pizza is amazing!";
+  if (input.includes("live")) return "I live inside your browser — no rent needed!";
+  if (input.includes("friends")) return "My best friends are smart humans like you!";
+  if (input.includes("creator")) return "I was created by a smart developer in 2025.";
+  if (input.includes("outstanding")) return "Scarecrow won because he was standing out — get it?";
+  if (input.includes("fire")) return "Fire is a chemical reaction called combustion — hot and bright!";
+  if (input.includes("earth")) return "Earth is our home planet, the 3rd from the Sun.";
+  if (input.includes("sun")) return "Yes! The sun is a giant star at the center of our solar system.";
+  if (input.includes("moon")) return "The Moon is Earth’s natural satellite. It reflects sunlight.";
+  if (input.includes("stars")) return "Stars are massive balls of burning gas in space.";
+  if (input.includes("mars")) return "NASA and SpaceX are planning Mars missions!";
+  if (input.includes("whatsapp")) return "WhatsApp is a popular messaging app owned by Meta.";
+  if (input.includes("facebook")) return "Facebook is a social media platform by Meta.";
+  if (input.includes("youtube")) return "YouTube is a video-sharing platform — watch, learn, or chill!";
+  if (input.includes("instagram")) return "Instagram is a photo and video sharing app.";
+  if (input.includes("google")) return "Google helps you find anything online. Just type and search!";
 
-  // Date & Time
-  if (input.includes("time")) return "⏰ Current time is: <b>" + now.toLocaleTimeString() + "</b>";
-  if (input.includes("date")) return "📅 Today's date is: <b>" + now.toLocaleDateString() + "</b>";
-
-  // Bot capabilities
-  if (input.includes("help") || input.includes("can you do")) return "I can chat, tell jokes, give facts, answer questions, read aloud, and more!";
-
-  // General Knowledge
-  if (input.includes("capital of pakistan")) return "Islamabad is the capital of Pakistan.";
-  if (input.includes("largest country")) return "Russia is the largest country by area.";
-  if (input.includes("smallest country")) return "Vatican City is the smallest country in the world.";
-  if (input.includes("fastest animal")) return "The cheetah is the fastest land animal.";
-  if (input.includes("tallest building")) return "The Burj Khalifa in Dubai is the tallest building.";
-  if (input.includes("longest river")) return "The Nile is one of the longest rivers in the world.";
-  if (input.includes("deepest ocean")) return "The Pacific Ocean is the deepest.";
-  if (input.includes("planet closest to sun")) return "Mercury is the closest planet to the Sun.";
-  if (input.includes("largest planet")) return "Jupiter is the largest planet in our solar system.";
-  if (input.includes("human body temperature")) return "Normal human body temperature is about 98.6°F (37°C).";
-
-  // Science & Math
-  if (input.includes("2+2")) return "2 + 2 = 4 ✅";
-  if (input.includes("square root of 16")) return "√16 = 4";
-  if (input.includes("speed of light")) return "The speed of light is about 299,792 km/s.";
-  if (input.includes("water formula")) return "The chemical formula for water is H₂O.";
-  if (input.includes("earth gravity")) return "Gravity on Earth is about 9.8 m/s².";
-  if (input.includes("sun is star or planet")) return "The Sun is a star.";
-
-  // Technology
-  if (input.includes("ai stands for") || input.includes("ai")) return "AI stands for Artificial Intelligence.";
-  if (input.includes("what is html")) return "HTML stands for HyperText Markup Language.";
-  if (input.includes("what is css")) return "CSS stands for Cascading Style Sheets.";
-  if (input.includes("what is api")) return "API means Application Programming Interface.";
-  if (input.includes("javascript")) return "JavaScript is a programming language for the web.";
-  if (input.includes("programming language")) return "A programming language is used to instruct computers.";
-  if (input.includes("famous ai tools")) return "Some popular AI tools are ChatGPT, DALL·E, Bard, and Claude.";
-
-  // Fun Stuff
-  if (input.includes("joke")) {
-    const jokes = [
-      "Why don’t robots panic? They have nerves of steel!",
-      "What do you call a smart robot? A chatbot like me!",
-      "Why was the computer cold? It forgot to close its windows!",
-      "Why did the chicken join a band? Because it had the drumsticks!"
-    ];
-    return jokes[Math.floor(Math.random() * jokes.length)];
-  }
-
-  if (input.includes("fact")) {
-    const facts = [
-      "Octopuses have three hearts!",
-      "Sharks existed before trees!",
-      "A bolt of lightning is five times hotter than the sun!",
-      "Bananas are radioactive due to potassium.",
-      "Humans share 60% of DNA with bananas."
-    ];
-    return facts[Math.floor(Math.random() * facts.length)];
-  }
-
-  if (input.includes("quote")) {
-    const quotes = [
-      "“The best way to predict the future is to invent it.” – Alan Kay",
-      "“Life is short. Live passionately.” – Marc A. Pitman",
-      "“Code is like humor. When you have to explain it, it’s bad.” – Cory House"
-    ];
-    return quotes[Math.floor(Math.random() * quotes.length)];
-  }
-
-  if (input.includes("emoji")) return "Sure! 😄✨🚀🎉💻🤖🌙💡🔥❤️";
-  if (input.includes("favorite color")) return "I love electric blue! ⚡";
-  if (input.includes("music")) return "I enjoy lo-fi, ambient, and synthwave music.";
-  if (input.includes("movie")) return "Sci-fi movies like The Matrix and Interstellar are my favorite.";
-  if (input.includes("book")) return "Books about AI, science, and the future excite me!";
-
-  // Fun interaction
-  if (input.includes("do you sleep")) return "Nope, I’m available 24/7 for you!";
-  if (input.includes("do you eat")) return "I feed on data, not food. 😋";
-  if (input.includes("do you have friends")) return "You’re my friend! 💙";
-  if (input.includes("can you dance")) return "Virtually, yes! 🕺💃";
-  if (input.includes("do you have feelings")) return "Not exactly, but I care about helping you!";
-
-  // Fallback
-  return "Hmm... I didn't understand that. Try asking me something else like a fact, joke, or quote.";
+  return "Hmm... I didn’t get that. Try asking something else!";
 }
-
