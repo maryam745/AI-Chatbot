@@ -136,6 +136,11 @@ function getBotResponse(input) {
   ];
 
   const funFacts = [
+    "A group of flamingos is called a flamboyance.",
+    "Sea otters hold hands while sleeping so they don’t drift apart.",
+    "Octopuses have three hearts and blue blood.",
+    "Cows have best friends and get stressed when separated.",
+    "Sloths can take up to a month to digest one leaf.",
     "2025 is a perfect square year because 2025 = 45².",
     "A hummingbird can fly backwards and beat its wings up to 80 times per second!",
     "Sloths can hold their breath for 40 minutes underwater!",
@@ -145,24 +150,27 @@ function getBotResponse(input) {
     "Dolphins can sleep while swimming!",
     "By 2025, flying taxis might be real in major cities!",
     "Mars will come close to Earth in 2025 — only 56 million km!",
-    "Digital restaurants with robot chefs are emerging fast."
-  ];
+    "Digital restaurants with robot chefs are emerging fast.",
+    "Honey never spoils , archaeologists found 3000-year-old honey still edible.",
+    "The Sahara Desert used to be a lush, green area with lakes and forests.",
+    "A single tree can absorb up to 48 pounds of carbon dioxide a year.",
+    "There are more trees on Earth than stars in the Milky Way.",  ];
 
   input = input.toLowerCase();
 
   if (input.includes("hello") || input.includes("hi")) return "Hello! How can I assist you today?";
-  if (input.includes("your name")) return "I’m <b>Falcon</b>, your AI chatbot!";
-  if (input.includes("time")) return "Current time is: <b>" + now.toLocaleTimeString() + "</b>";
+  if (input.includes("your name")|| input.includes("what is your name")) return "I’m <b>Falcon</b>, your AI chatbot!";
+  if (input.includes("time")|| input.include("what is the time")) return "Current time is: <b>" + now.toLocaleTimeString() + "</b>";
   if (input.includes("date")) return "Today's date is: <b>" + now.toLocaleDateString() + "</b>";
   if (input.includes("bye")) return "Goodbye! Take care.";
   if (input.includes("how are you")) return "I'm a bot, but I'm functioning perfectly!";
-  if (input.includes("your age")) return "I was created in 2025 — so I'm still young!";
-  if (input.includes("joke")) return jokes[Math.floor(Math.random() * jokes.length)];
+  if (input.includes("your age")|| input.includes("what is your age")) return "I was created in 2025 — so I'm still young!";
+  if (input.includes("joke") || input.includes("can you tell me a joke")) return jokes[Math.floor(Math.random() * jokes.length)];
   if (input.includes("help") || input.includes("can you do")) return "I can chat, tell jokes, share fun facts, give time/date, and listen to voice!";
-  if (input.includes("fact")) return funFacts[Math.floor(Math.random() * funFacts.length)];
+  if (input.includes("funfact")|| input.includes("tell me something interesting")) return funFacts[Math.floor(Math.random() * funFacts.length)];
   if (input.includes("weather")) return "I can't check live weather yet, but I hope it's nice where you are!";
   if (input.includes("quote")) return "“The best way to predict the future is to invent it.” – Alan Kay";
-  if (input.includes("thank")) return "You're welcome!";
+  if (input.includes("thank")|| input.includes("thank you ")|| input.includes("thanks")) return "You're welcome!";
   if (input.includes("book")) return "I love tech books — especially about AI.";
   if (input.includes("movie")) return "I like sci-fi like *The Matrix* or *Interstellar*!";
   if (input.includes("music")) return "Electronic beats and chill synths are my favorite!";
@@ -172,7 +180,7 @@ function getBotResponse(input) {
   if (input.includes("chatgpt")) return "ChatGPT is an advanced AI model developed by OpenAI.";
   if (input.includes("pakistan")) return "Pakistan is a beautiful country in South Asia with rich culture.";
   if (input.includes("programming")) return "Programming is writing instructions for computers. Popular languages: Python, Java, C++.";
-  if (input.includes("ai")) return "AI means Artificial Intelligence — machines that simulate human intelligence.";
+  if (input.includes("AI")) return "AI means Artificial Intelligence — machines that simulate human intelligence.";
   if (input.includes("robot")) return "Robots are smart machines that can perform tasks automatically.";
   if (input.includes("language")) return "I speak English (for now).";
   if (input.includes("science")) return "Science is the pursuit of knowledge through observation and experiments.";
