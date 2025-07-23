@@ -20,17 +20,15 @@
       <button onclick="quickReply('What is today\'s date?')">Date?</button>
     </div>
 
-    <div class="input-area">
-      <input type="text" id="userInput" placeholder="Type or speak..." autocomplete="off" />
-      <button onclick="sendMessage()" aria-label="Send message">🚀</button>
-      <button id="micBtn" onclick="startListening()" aria-label="Start voice input">🎤</button>
-      <button id="themeBtn" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
-    </div>
+    <input id="userInput" placeholder="Type a message..." />
+    <button id="micBtn" onclick="startListening()">🎤</button>
+    <button id="themeBtn" onclick="toggleTheme()">🌙</button>
 
     <div class="bottom-buttons">
       <button onclick="clearChat()">🗑️ Clear Chat</button>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
